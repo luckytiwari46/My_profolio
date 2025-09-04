@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Tiwari - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #f0f4f8, #e2e8f0);
+            color: #1a202c;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu Specific Styling */
+        #nav-links.flex {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 1rem 0;
+            border-top: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 40;
+        }
+        #nav-links a {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: 
+        color 0.3s ease, 
+        transform 0.3s ease, 
+        letter-spacing 0.3s ease,
+        text-shadow 0.3s ease,
+        background 0.3s ease;
+    letter-spacing: 0px;
+    perspective: 500px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+#nav-links a:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #007bff 0%, #00ffcc 100%);
+    letter-spacing: 1px;
+    transform: rotateX(10deg) translateY(-2px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#nav-links a:hover::after {
+    width: 100%;
+}
+
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white sticky top-0 z-50 shadow-lg py-4">
+        <nav class="container flex justify-between items-center flex-wrap relative">
+            <a href="#hero" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-100 transition-colors">Lucky Tiwari</a>
+            
+            <button id="menu-toggle" class="md:hidden text-gray-800 p-2 rounded-lg hover:bg-gray-200 hover:scale-110 transition-transform duration-300 ease-in-out z-50">
+                <i id="menu-icon" class="fas fa-bars fa-lg"></i>
+            </button>
+            
+            <div id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-4 items-center">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">About</a>
+                <a href="#education" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">Education</a>
+                <a href="#skills" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">Skills</a>
+                <a href="#experience" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">Projects</a>
+                <a href="#achievements" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">Achievements</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors rounded-full px-2 py-1">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="min-h-screen flex items-center justify-center p-8">
+            <div class="container mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between space-y-12 md:space-y-0 md:space-x-24 px-4">
+                
+                <div class="flex-1 flex justify-center items-center relative md:justify-start">
+                    <div class="absolute w-24 h-24 bg-yellow-400 rounded-full top-0 left-0 transform -translate-x-12 -translate-y-12 opacity-70"></div>
+                    <div class="absolute w-12 h-12 bg-blue-700 rounded-full bottom-0 right-0 transform translate-x-12 translate-y-12 opacity-70"></div>
+                    <img src="C:\Users\HP\Downloads\lucky tiwari_p.jpg" alt="Lucky Tiwari's Profile Photo" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-white">
+                </div>
+
+                <div class="flex-1 text-center md:text-left space-y-6">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                        Hi, I'm <span class="text-blue-700">Lucky Tiwari</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700">B.Tech (CSE) Final Year Student | AI Enthusiast | Data Science Intern</p>
+                    <p class="text-md md:text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
+                        Passionate about AI/ML and software development. Currently working on innovative projects like MoodBite AI - a personalized food recommendation system.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                        <a href="#contact" class="w-full sm:w-auto bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-800 transition-colors">Get In Touch</a>
+                        <a href="uploaded:Lucky_Tiwari_Resume_W1.pdf" target="_blank" class="w-full sm:w-auto bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-300 transition-colors">Download CV</a>
+                    </div>
+
+                    <div class="flex justify-center md:justify-start space-x-6 pt-8">
+                        <a href="https://www.linkedin.com/in/tiwarilucky" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/luckytiwari46" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="mailto:luckytiwari.stnt@gmail.com" class="text-gray-500 hover:text-blue-600 transition-colors">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <a href="tel:+918546020590" class="text-gray-500 hover:text-blue-600 transition-colors">
+                            <i class="fas fa-phone-alt fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container fade-in">
+                <h2 class="section-title">About Me</h2>
+                <div class="text-lg leading-relaxed text-center max-w-3xl mx-auto space-y-4">
+                    <p>I'm a final-year B.Tech Computer Science student with a passion for AI and software development. My journey combines academic excellence with practical experience in cutting-edge technologies.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 text-center max-w-5xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">AI Enthusiast</h3>
+                        <p class="text-gray-600">Specializing in Machine Learning and Computer Vision with real-world project experience.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Full Stack Developer</h3>
+                        <p class="text-gray-600">Proficient in PHP, Java, JavaScript, Python with frameworks like Laravel and ReactJS.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Top Performer</h3>
+                        <p class="text-gray-600">Top 20% in Codequezt#20 Coding Challenge, showcasing strong problem-solving skills.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Team Player</h3>
+                        <p class="text-gray-600">Experience in remote collaboration and professional development environments.</p>
+                    </div>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto text-lg leading-relaxed text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">My Journey</h3>
+                    <p>Currently pursuing B.Tech in Computer Science at Shri Ramswaroop Memorial College of Engineering and Management, Lucknow, with a strong CGPA of 7.91/10. My academic foundation was built during my diploma in Computer Science from Maharana Pratap Polytechnic, where I achieved 79.32%. I'm passionate about AI and Machine Learning, currently working as a Data Science and AI/ML Intern at YBI Foundation. My flagship project, MoodBite AI, demonstrates my ability to combine computer vision with practical applications, achieving 61.6% accuracy in mood-based food recommendations. Beyond technical skills, I bring leadership qualities, strong communication abilities, and a commitment to continuous learning in emerging technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="bg-gray-50 py-20">
+            <div class="container fade-in">
+                <h2 class="section-title">Education</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <h4 class="text-xl font-bold text-blue-700">Bachelor of Technology - Computer Science and Engineering</h4>
+                            <p class="text-sm text-gray-500 mt-2 sm:mt-0">July 2023 - June 2026</p>
+                        </div>
+                        <p class="text-gray-600 mt-1">Shri Ramswaroop Memorial College of Engineering and Management, Lucknow, India</p>
+                        <p class="mt-3 text-gray-700">CGPA: 7.91/10</p>
+                        <div class="mt-4">
+                            <h5 class="font-semibold text-gray-900">Key Courses:</h5>
+                            <p class="text-sm text-gray-600">Operating Systems, Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Networking, Databases</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <h4 class="text-xl font-bold text-blue-700">Diploma - Computer Science</h4>
+                            <p class="text-sm text-gray-500 mt-2 sm:mt-0">Aug 2019 - Sep 2022</p>
+                        </div>
+                        <p class="text-gray-600 mt-1">Maharana Pratap Polytechnic Gorakhpur, Gorakhpur, India</p>
+                        <p class="mt-3 text-gray-700">Percentage: 79.32/100</p>
+                        <div class="mt-4">
+                            <h5 class="font-semibold text-gray-900">Key Courses:</h5>
+                            <p class="text-sm text-gray-600">Computer Networks, Programming in C, Data Structures, Database Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="container fade-in">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="text-center text-lg text-gray-700 mb-8">Technical proficiencies and soft skills developed through academic and professional experience.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Programming Languages</h3>
+                        <p class="text-gray-600">PHP, Java, JavaScript, SQL, Python, C, C++</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Frameworks & Libraries</h3>
+                        <p class="text-gray-600">Laravel, ReactJS, Ratchet PHP WebSocket</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Databases & Tools</h3>
+                        <p class="text-gray-600">MySQL, SQLite, GIT, VS Code, OpenCV</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Platforms & Cloud</h3>
+                        <p class="text-gray-600">Linux, Web, Windows, AWS, Google Cloud</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Technical Specializations</h3>
+                        <p class="text-gray-600">Machine Learning, Computer Vision, Data Science, AI Systems, WebSocket Integration</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Soft Skills</h3>
+                        <p class="text-gray-600">Leadership, Event Management, Writing, Public Speaking, Time Management, Team Collaboration</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-center max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <p class="text-4xl font-bold text-blue-700">5+</p>
+                        <p class="text-gray-600 mt-2">Programming Languages</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <p class="text-4xl font-bold text-blue-700">3+</p>
+                        <p class="text-gray-600 mt-2">Major Frameworks</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <p class="text-4xl font-bold text-blue-700">AI/ML</p>
+                        <p class="text-gray-600 mt-2">Specialization Focus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="bg-gray-50 py-20">
+            <div class="container fade-in">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <div>
+                                <h4 class="text-xl font-bold text-blue-700">Data Science and AI/ML Internship</h4>
+                                <p class="text-sm text-gray-500">YBI Foundation</p>
+                            </div>
+                            <div class="text-right mt-2 sm:mt-0">
+                                <p class="text-sm text-gray-500">Oct 2024 – Mar 2025</p>
+                                <p class="text-sm text-gray-500">Remote</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc list-inside mt-3 space-y-2 text-gray-700">
+                            <li><strong>Hands-on Project Work:</strong> Completed real-world projects involving data science, machine learning, and backend system optimization.</li>
+                            <li><strong>WebSocket Integration:</strong> Implemented real-time post/thread updates using Ratchet PHP WebSocket, improving user experience with low-latency communication.</li>
+                            <li><strong>Professional Development:</strong> Demonstrated commitment to learning emerging technologies, adhered to coding best practices, and delivered solutions in a remote, team-based environment.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <div class="flex flex-col sm:flex-row justify-between items-start">
+                            <div>
+                                <h4 class="text-xl font-bold text-blue-700">Android Development Internship</h4>
+                                <p class="text-sm text-gray-500">SMPS Innovations Electronics Pvt. Ltd</p>
+                            </div>
+                            <div class="text-right mt-2 sm:mt-0">
+                                <p class="text-sm text-gray-500">Oct 2021 – Nov 2021</p>
+                                <p class="text-sm text-gray-500">Remote</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc list-inside mt-3 space-y-2 text-gray-700">
+                            <li><strong>Basic Android App Development:</strong> Learned fundamentals of Android app development, including UI design and activity lifecycle.</li>
+                            <li><strong>Project Execution:</strong> Completed mini-projects and assignments on time with proper submission standards.</li>
+                            <li><strong>Active Participation:</strong> Engaged in training sessions, asked relevant questions, and sought feedback to enhance learning.</li>
+                            <li><strong>Hands-on Learning:</strong> Practiced by building simple applications and understanding real-world use cases.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8 text-center max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800">Real-time Systems</h3>
+                        <p class="text-gray-600 text-sm mt-1">WebSocket Integration</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800">AI/ML Projects</h3>
+                        <p class="text-gray-600 text-sm mt-1">Data Science Applications</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800">Mobile Development</h3>
+                        <p class="text-gray-600 text-sm mt-1">Android Applications</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800">Remote Collaboration</h3>
+                        <p class="text-gray-600 text-sm mt-1">Team-based Environment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <div class="container fade-in">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">MoodBite AI - Personalized Food Recommendation System</h3>
+                        <p class="text-gray-600 mb-4">An innovative AI-powered system that analyzes user moods using computer vision and recommends personalized food options with 61.6% accuracy. This project demonstrates the intersection of AI, machine learning, and practical user experience.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Accuracy: 61.6%</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Technology: Computer Vision + Gen AI</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Features:</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 mb-4 space-y-1">
+                            <li>Real-time mood detection using computer vision</li>
+                            <li>Personalized food recommendations based on emotional state</li>
+                            <li>Integration with modern web technologies</li>
+                            <li>Cloud-based deployment for scalability</li>
+                        </ul>
+                        <h4 class="font-semibold text-gray-800 mb-2">Technologies Used:</h4>
+                        <p class="text-sm text-gray-600">Python, ReactJS, Computer Vision, Gen AI, Supabase, Google Cloud, OpenCV</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="bg-gray-50 py-20">
+            <div class="container fade-in">
+                <h2 class="section-title">Achievements & Certifications</h2>
+                <p class="text-center text-lg text-gray-700 mb-8">Recognition for academic excellence and professional development.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Competitive Achievements</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <h4 class="text-lg font-semibold text-blue-700">Codequezt#20 Coding Challenge</h4>
+                                <p class="text-sm text-gray-500">Top 20% Performer - Competitive Programming, June 2025</p>
+                                <p class="mt-2 text-gray-700">Scored within the top 20% of participants, showcasing strong proficiency in data structures, logic building, and code efficiency.</p>
+                            </li>
+                            <li>
+                                <h4 class="text-lg font-semibold text-blue-700">AINCAT – All India National Competitive Aptitude Test</h4>
+                                <p class="text-sm text-gray-500">National Aptitude Evaluation, May 2025</p>
+                                <p class="mt-2 text-gray-700">Tested across 6+ core areas, including logical reasoning, numerical aptitude, verbal ability, and analytical thinking.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 class="font-semibold text-gray-800 text-xl mb-2">Professional Certifications</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <h4 class="text-lg font-semibold text-blue-700">Python 101 for Data Science</h4>
+                                <p class="text-sm text-gray-500">IBM Cognitive Class, Oct 2023</p>
+                            </li>
+                            <li>
+                                <h4 class="text-lg font-semibold text-blue-700">Big Data 101</h4>
+                                <p class="text-sm text-gray-500">IBM Cognitive Class, Oct 2023</p>
+                            </li>
+                            <li>
+                                <h4 class="text-lg font-semibold text-blue-700">IBM Cloud Essentials</h4>
+                                <p class="text-sm text-gray-500">IBM Cognitive Class, Oct 2023</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container fade-in">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                                <i class="fas fa-envelope text-blue-700 text-2xl"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Email</p>
+                                    <a href="mailto:luckytiwari.stnt@gmail.com" class="text-blue-700 hover:text-blue-500 transition-colors">luckytiwari.stnt@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                                <i class="fas fa-phone-alt text-blue-700 text-2xl"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Mobile</p>
+                                    <p class="text-blue-700">+91-8546020590</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                                <i class="fas fa-map-marker-alt text-blue-700 text-2xl"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Location</p>
+                                    <p class="text-blue-700">Lucknow, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                                <i class="fab fa-linkedin text-blue-700 text-2xl"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/tiwarilucky" target="_blank" class="text-blue-700 hover:text-blue-500 transition-colors">tiwarilucky</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                                <i class="fab fa-github text-blue-700 text-2xl"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Github</p>
+                                    <a href="https://github.com/luckytiwari46" target="_blank" class="text-blue-700 hover:text-blue-500 transition-colors">luckytiwari46</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 mt-6">
+                            <h4 class="font-semibold text-gray-900 text-lg mb-2">Quick Response</h4>
+                            <p class="text-gray-600 text-sm mb-4">I typically respond to emails within 24 hours. For urgent matters, feel free to reach out via phone or LinkedIn.</p>
+                            <div class="flex space-x-4">
+                                <a href="mailto:luckytiwari.stnt@gmail.com" class="bg-blue-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-800 transition-colors flex items-center space-x-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Send Email</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/tiwarilucky" target="_blank" class="bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-gray-300 transition-colors flex items-center space-x-2">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Let's Collaborate</h3>
+                        <p class="text-gray-700 mb-6">If you have a project or an opportunity you think I would be a good fit for, please fill out the form below. I look forward to hearing from you.</p>
+                        <form action="#" method="POST" class="space-y-4 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2" required></textarea>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Lucky Tiwari. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Hamburger menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            
+            // Toggle the icon
+            if (navLinks.classList.contains('flex')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Hide menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!navLinks.classList.contains('hidden')) {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+    </script>
+</body>
+</html>
